@@ -19,8 +19,8 @@
   "author": "Nikolai Timokhin",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --mode=production",
-    "dev": "webpack serve --mode=development",
+    "build": "webpack --config webpack.config.cjs --mode=production",
+    "dev": "webpack serve --config webpack.config.cjs --mode=development",
     "lint": "eslint .",
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
     "test:coverage": "node --experimental-vm-modules node_modules/jest/bin/jest.js --coverage"

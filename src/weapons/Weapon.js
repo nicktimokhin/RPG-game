@@ -3,7 +3,7 @@ export class Weapon {
     this.name = name;
     this.attack = attack;
     this.durability = durability;
-    this.baseDurability = durability; 
+    this.baseDurability = durability; // Сохраняем начальную прочность
     this.range = range;
   }
 
@@ -15,16 +15,13 @@ export class Weapon {
 
   getDamage() {
     if (this.durability === 0) return 0;
-    if (this.baseDurability === Infinity) return this.attack;
-
+    
     const durabilityPercent = this.durability / this.baseDurability;
     if (durabilityPercent >= 0.3) {
       return this.attack;
+    } else {
+      return this.attack / 2;
     }
-    if (durabilityPercent >= 0.1) {
-      return this.attack * 0.7;
-    }
-    return this.attack * 0.5;
   }
 
   isBroken() {
